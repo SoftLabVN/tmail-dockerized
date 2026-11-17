@@ -20,6 +20,9 @@
 # Zip archives
 *.zip
 
+# Export dumps
+/exports/
+
 # OS and Editor
 .DS_Store
 Thumbs.db
