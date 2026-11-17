@@ -1,0 +1,11 @@
+.git
+.gitignore
+*.zip
+docker-compose*.yml
+.env
+storage/*.key
+storage/installed
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
