@@ -23,7 +23,7 @@ services:
       - DEFAULT_DOMAIN=${DEFAULT_DOMAIN:-imail.edu.vn}
       - DEFAULT_THEME=${DEFAULT_THEME:-default}
       - ADMIN_NAME=${ADMIN_NAME:-Peter Tuan Anh}
-      - ADMIN_EMAIL=${ADMIN_EMAIL:-petertuananh@hotmail.com}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-anhptt@softlab.vn}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-Admin@123456}
     volumes:
       - tmail_storage:/var/www/html/storage

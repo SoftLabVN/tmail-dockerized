@@ -55,7 +55,7 @@ Review and adjust `.env` parameters if needed:
 - `APP_URL`: e.g. `https://imail.edu.vn`
 - `APP_PORT`: Host port (default: `8090`)
 - `DEFAULT_DOMAIN`: Primary email domain (e.g. `imail.edu.vn`)
-- `ADMIN_EMAIL`: Admin email address (e.g. `petertuananh@hotmail.com`)
+- `ADMIN_EMAIL`: Admin email address (e.g. `anhptt@softlab.vn`)
 - `ADMIN_PASSWORD`: Admin password
 - `AUTO_INSTALL`: Set to `true` for instant setup or `false` for manual web installer at `/installer`.
 

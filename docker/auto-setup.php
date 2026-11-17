@@ -37,7 +37,7 @@ Setting::put('engine', $engine);
 echo "==> Mail engine set to: $engine\n";
 
 // Admin user setup
-$adminEmail = env('ADMIN_EMAIL', 'petertuananh@hotmail.com');
+$adminEmail = env('ADMIN_EMAIL', 'anhptt@softlab.vn');
 $adminPassword = env('ADMIN_PASSWORD', 'Admin@123456');
 $adminName = env('ADMIN_NAME', 'Peter Tuan Anh');
 
