@@ -121,18 +121,19 @@
             @endif
         </main>
         <footer class="bg-gray-800 py-10" style="background-color: {{ config('app.settings.colors.primary') }}">
-            <div class="container mx-auto md:space-y-10">
+            <div class="container mx-auto px-4 md:space-y-6">
                 <div>
                     @livewire('frontend.nav')
                 </div>
-                <div class="hidden md:block border-2 border-dashed border-white border-opacity-10"></div>
-                <div class="copyright text-white text-center text-sm">
+                @include('frontend.common.footer-info')
+                <div class="hidden md:block border-b border-white border-opacity-10"></div>
+                <div class="copyright text-white text-center text-xs opacity-75">
                     {{ __('Copyright ') }}
                     <script>
                         document.write((new Date()).getFullYear())
 
                     </script>
-                    - {{ config('app.settings.name') }}
+                    - {{ config('app.settings.name') }} • Vận hành và phát triển bởi <a href="https://softlab.vn" target="_blank" class="underline font-semibold hover:text-yellow-300">CÔNG TY TNHH GIẢI PHÁP SỐ SOFTLAB</a>
                 </div>
             </div>
         </footer>

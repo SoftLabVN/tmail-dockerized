@@ -61,14 +61,15 @@
                 <div class="flex justify-center items-center max-w-full adz-three">{!! config("app.settings.ads.three") !!}</div>
             @endif
         </div>
-        <footer class="bg-gray-800 order-3 text-white text-sm pt-20 pb-6 z-0">
-            <div class="container mx-auto">
-                <div class="flex items-center justify-center lg:hidden mb-5">
+        <footer class="bg-gray-800 order-3 text-white text-sm pt-8 pb-6 z-0">
+            <div class="container mx-auto px-4">
+                @include('frontend.common.footer-info')
+                <div class="flex items-center justify-center lg:hidden my-5">
                     @foreach (config("app.settings.socials", []) as $social)
                         <a href="{{ $social["link"] }}" target="_blank" class="ml-2 text-lg text-gray-200 dark:text-gray-300 hover:text-white dark:hover:text-gray-100" rel="noopener noreferrer"><i class="{{ $social["icon"] }}"></i></a>
                     @endforeach
                 </div>
-                <div class="flex flex-col lg:flex-row gap-5 justify-between items-center">
+                <div class="flex flex-col lg:flex-row gap-5 justify-between items-center pt-4 border-t border-gray-700">
                     <div class="flex space-x-3">
                         @foreach (\App\Models\Menu::where("status", true)->where("location", "secondary")->orderBy("order")->get() as $menu)
                             <a href="{{ Util::localizeUrl($menu->link) }}" class="text-white dark:text-gray-100 hover:underline dark:hover:text-gray-300">
@@ -79,7 +80,7 @@
                             @endif
                         @endforeach
                     </div>
-                    <div class="opacity-75 dark:opacity-80 text-white dark:text-gray-200">{{ __("Copyright") }} &copy; {{ date("Y") }} {{ config("app.settings.name") }}. {{ __("All rights reserved.") }}</div>
+                    <div class="opacity-75 dark:opacity-80 text-white dark:text-gray-200">{{ __("Copyright") }} &copy; {{ date("Y") }} {{ config("app.settings.name") }} • Vận hành bởi CÔNG TY TNHH GIẢI PHÁP SỐ SOFTLAB. {{ __("All rights reserved.") }}</div>
                     <div class="hidden lg:block">
                         @foreach (config("app.settings.socials", []) as $social)
                             <a href="{{ $social["link"] }}" target="_blank" class="ml-2 text-lg text-gray-200 dark:text-gray-300 hover:text-white dark:hover:text-gray-100" rel="noopener noreferrer"><i class="{{ $social["icon"] }}"></i></a>

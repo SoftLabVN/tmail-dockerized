@@ -20,5 +20,16 @@ class MenuSeeder extends Seeder {
                 'location' => 'primary',
             ]);
         }
+
+        $disclaimerUrl = route('page', 'dieu-khoan-va-tu-choi-trach-nhiem');
+        if (Menu::where('link', $disclaimerUrl)->doesntExist()) {
+            Menu::create([
+                'name' => 'Điều khoản & Từ chối trách nhiệm',
+                'link' => $disclaimerUrl,
+                'status' => 1,
+                'order' => 2,
+                'location' => 'primary',
+            ]);
+        }
     }
 }
