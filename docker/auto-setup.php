@@ -31,10 +31,26 @@ if (!empty($theme)) {
     echo "==> Theme set to: $theme\n";
 }
 
-// Engine setup (imap or delivery)
-$engine = env('TMAIL_ENGINE', 'imap');
+// Engine setup (delivery or imap)
+$engine = env('TMAIL_ENGINE', 'delivery');
 Setting::put('engine', $engine);
 echo "==> Mail engine set to: $engine\n";
+
+if (env('IMAP_HOST')) {
+    $imapConfig = [
+        'host' => env('IMAP_HOST', 'localhost'),
+        'port' => (int) env('IMAP_PORT', 993),
+        'encryption' => env('IMAP_ENCRYPTION', 'ssl'),
+        'validate_cert' => filter_var(env('IMAP_VALIDATE_CERT', false), FILTER_VALIDATE_BOOLEAN),
+        'username' => env('IMAP_USERNAME', ''),
+        'password' => env('IMAP_PASSWORD', ''),
+        'default_account' => env('IMAP_DEFAULT_ACCOUNT', 'default'),
+        'protocol' => env('IMAP_PROTOCOL', 'imap'),
+        'cc_check' => filter_var(env('IMAP_CC_CHECK', false), FILTER_VALIDATE_BOOLEAN),
+    ];
+    Setting::put('imap', $imapConfig);
+    echo "==> IMAP configuration saved\n";
+}
 
 // Admin user setup
 $adminEmail = env('ADMIN_EMAIL', 'anhptt@softlab.vn');

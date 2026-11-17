@@ -20,6 +20,7 @@ services:
       - DB_PASSWORD=${DB_PASSWORD:-tmail_secret_password}
       - SESSION_DRIVER=database
       - AUTO_INSTALL=${AUTO_INSTALL:-true}
+      - TMAIL_ENGINE=${TMAIL_ENGINE:-delivery}
       - DEFAULT_DOMAIN=${DEFAULT_DOMAIN:-imail.edu.vn}
       - DEFAULT_THEME=${DEFAULT_THEME:-default}
       - ADMIN_NAME=${ADMIN_NAME:-Peter Tuan Anh}
