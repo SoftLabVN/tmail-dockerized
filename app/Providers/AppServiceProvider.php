@@ -25,5 +25,9 @@ class AppServiceProvider extends ServiceProvider {
         }
         // Register anonymous components
         Blade::anonymousComponentPath(resource_path('views/components'));
+        // Backward compatibility for themes referencing App\Models\TMail
+        if (!class_exists('App\Models\TMail')) {
+            class_alias(\App\Services\TMail::class, 'App\Models\TMail');
+        }
     }
 }

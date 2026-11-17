@@ -5,19 +5,19 @@
             </div>
             <div class="m-5 flex">
                 <div class="relative flex-1">
-                    <x-jet-dropdown align="top" width="w-full">
+                    <x-dropdown align="top" width="full">
                         <x-slot name="trigger">
                             <div class="block appearance-none w-full bg-white text-white py-4 px-5 pr-8 bg-opacity-10 rounded-md cursor-pointer focus:outline-none select-none"
                                 id="email_id">{{ $email }}</div>
                         </x-slot>
                         <x-slot name="content">
                             @foreach ($emails as $email)
-                                <x-jet-dropdown-link href="{{ route('switch', $email) }}">
+                                <x-dropdown-link href="{{ route('switch', $email) }}">
                                     {{ $email }}
-                                </x-jet-dropdown-link>
+                                </x-dropdown-link>
                             @endforeach
                         </x-slot>
-                    </x-jet-dropdown>
+                    </x-dropdown>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -58,7 +58,7 @@
                             class="block appearance-none w-full rounded-md py-4 px-5 bg-white text-white bg-opacity-10 focus:outline-none placeholder-white placeholder-opacity-50"
                             type="text" name="user" id="user" wire:model="user" placeholder="{{ __('Enter Username') }}">
                         <div class="relative">
-                            <x-jet-dropdown align="top" width="w-full">
+                            <x-dropdown align="top" width="full">
                                 <x-slot name="trigger">
                                     <input x-ref="domain" type="text"
                                         class="block appearance-none w-full bg-white text-white py-4 px-5 pr-8 bg-opacity-10 rounded-md cursor-pointer focus:outline-none select-none placeholder-white placeholder-opacity-50"
@@ -71,7 +71,7 @@
                                             class='block px-4 py-2 text-sm leading-5 text-gray-700 cursor-pointer hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out'>{{ $domain }}</a>
                                     @endforeach
                                 </x-slot>
-                            </x-jet-dropdown>
+                            </x-dropdown>
                             <div
                                 class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-white">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"

@@ -89,11 +89,13 @@
                         </div>
                         <div class="flex items-center mt-4">
                             <div class="relative">
-                                <form action="{{ route('locale', '') }}" id="locale-form-mobile" method="post">
+                                <form action="{{ route('locale') }}" id="locale-form-mobile" method="post">
                                     @csrf
-                                    <select class="block appearance-none bg-gray-200 cursor-pointer text-gray-800 px-2 py-1 pr-5 rounded-md focus:outline-none" name="locale" id="locale-mobile">
-                                        @foreach(config('app.locales') as $locale)
-                                        <option {{ (app()->getLocale() == $locale ) ? "selected" : "" }}>{{ $locale }}</option>
+                                    <select class="block appearance-none bg-gray-200 cursor-pointer text-gray-800 px-2 py-1 pr-5 rounded-md focus:outline-none" name="locale" id="locale-mobile" onchange="this.form.submit()">
+                                        @foreach(config('app.settings.languages', []) as $code => $language)
+                                            @if ($language['is_active'] ?? true)
+                                                <option {{ (app()->getLocale() == $code ) ? "selected" : "" }} value="{{ $code }}">{{ $language['label'] ?? $code }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </form>
