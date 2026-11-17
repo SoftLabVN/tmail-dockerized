@@ -34,6 +34,23 @@ services:
     networks:
       - tmail-network
 
+  smtp:
+    build:
+      context: docker/smtp
+      dockerfile: Dockerfile
+    container_name: tmail-smtp
+    restart: always
+    ports:
+      - "${SMTP_PORT:-25}:25"
+    environment:
+      - DELIVERY_URL=http://app/api/delivery/message/store/${DELIVERY_KEY:-mjNSR9FHpY7Q5B3VMK8hADXvLObI1qZa}
+      - ALLOWED_DOMAINS=${DEFAULT_DOMAIN:-imail.edu.vn}
+      - SMTP_PORT=25
+    depends_on:
+      - app
+    networks:
+      - tmail-network
+
   db:
     image: mariadb:10.11
     container_name: tmail-db

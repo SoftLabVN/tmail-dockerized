@@ -36,6 +36,12 @@ $engine = env('TMAIL_ENGINE', 'delivery');
 Setting::put('engine', $engine);
 echo "==> Mail engine set to: $engine\n";
 
+$deliveryKey = env('DELIVERY_KEY', 'mjNSR9FHpY7Q5B3VMK8hADXvLObI1qZa');
+if (!empty($deliveryKey)) {
+    Setting::put('delivery', ['key' => $deliveryKey]);
+    echo "==> Delivery key configured\n";
+}
+
 if (env('IMAP_HOST')) {
     $imapConfig = [
         'host' => env('IMAP_HOST', 'localhost'),

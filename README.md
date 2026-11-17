@@ -7,6 +7,7 @@ Dockerized setup for **TMail - Multi-Domain Temporary Email System** (version 8.
 ## 🚀 Features
 
 - **PHP 8.3 FPM & Nginx**: Optimized Alpine-based single container managed by Supervisord.
+- **Built-in SMTP Receiver (Port 25)**: Dedicated Python async SMTP service (`aiosmtpd`) listening on port 25, automatically receiving incoming emails and pushing them directly into TMail database via Delivery API.
 - **Full PHP Extensions Included**: `pdo_mysql`, `mysqli`, `imap`, `bcmath`, `mbstring`, `zip`, `xml`, `fileinfo`, `ctype`, `json`, `tokenizer`, `openssl`, `iconv`, `gd`, `opcache`.
 - **Database**: MariaDB 10.11 LTS with automatic healthcheck and volume persistence.
 - **Themes Included**:
