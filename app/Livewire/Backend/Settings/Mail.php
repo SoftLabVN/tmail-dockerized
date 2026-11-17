@@ -70,6 +70,7 @@ class Mail extends Component {
             'MAIL_USERNAME' => $this->state['mail']['smtp']['username'],
             'MAIL_PASSWORD' => $this->state['mail']['smtp']['password'],
             'MAIL_ENCRYPTION' => $this->state['mail']['smtp']['encryption'],
+            'MAIL_SCHEME' => ($this->state['mail']['smtp']['port'] == '465' || $this->state['mail']['smtp']['encryption'] == 'ssl') ? 'smtps' : 'null',
             'MAIL_FROM_ADDRESS' => $this->state['mail']['from']['address'],
             'MAIL_FROM_NAME' => $this->state['mail']['from']['name'],
         ];
